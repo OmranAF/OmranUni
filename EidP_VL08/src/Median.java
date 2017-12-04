@@ -19,6 +19,7 @@ Lassen Sie sich sowohl den Inhalt der Felder als auch die Ergebnisse der Methode
 	 */
 	
 	public static void berechneDurchschnitt(int[][]  zahlen) {
+		
 		int sum=0;
 		int element=0;
 		for(int i=0;i<zahlen.length;i++) {
@@ -31,19 +32,32 @@ Lassen Sie sich sowohl den Inhalt der Felder als auch die Ergebnisse der Methode
 		float average=sum/element;
 		System.out.println(average);
 	}
-	public static void berechneMedian(int[] zahlen) {
-		int median=0;
+	public static int[] berechneMedian(int[] zahlen) {
+		for(int i=0;i<zahlen.length-1;i++) {
+			int min=i;
+			for(int j=i+1;j<zahlen.length;j++) {
+				if(zahlen[j]<zahlen[min]) {
+					min=j;
+				}
+			int zw=zahlen[i];
+			zahlen[i]=zahlen[min];
+			zahlen[min]=zw;
+			}
+			return zahlen;
+		}
+		
+		double median=0;
 		int k=zahlen.length/2;
 		if(zahlen.length%2==0) {
 			
-			median=zahlen[k]+zahlen[k-1];
-			System.out.println(median);
+			median=(zahlen[k]+zahlen[k-1])/2;
+			System.out.println("median= "+median);
 		}else {
 			median=zahlen[k];
-			System.out.println(median);
+			System.out.println("median="+median);
 
 		}
-		
+		return zahlen;
 	}
 	
 	
@@ -52,12 +66,13 @@ Lassen Sie sich sowohl den Inhalt der Felder als auch die Ergebnisse der Methode
 	public static void main(String[] args) {
 	
 		int[][] zahle= {{1,3},{4,8},{3,5}};
-		berechneDurchschnitt(zahle);
+		//berechneDurchschnitt(zahle);
 		
 		int[] zahle2= {1,5,4,3,8};
 		int[] zahlen3= {2,4,5,6};
-		berechneMedian(zahle2);
-		berechneMedian(zahlen3);
+		System.out.println(berechneMedian(zahle2));
+		System.out.println("-------------------");
+		System.out.println(berechneMedian(zahlen3));
 		
 
 	}
