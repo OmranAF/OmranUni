@@ -20,7 +20,7 @@ public class BruchTest {
 		k = k.multiplizieren(d);
 		System.out.println(k+"\n---\n");
 		
-		
+		 
 		System.out.println(d.addieren(s));
 		System.out.println(d.addieren2(s));
 

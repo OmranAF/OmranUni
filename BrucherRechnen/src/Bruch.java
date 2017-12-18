@@ -57,20 +57,17 @@ public class Bruch {
 			Bruch newBruch = new Bruch(newZaehler, newNenner);
 			return newBruch;
 		}
-
+ 
 	}
 	
 	public Bruch addieren2(Bruch b) {
 		int newNenner = nenner;
-		
 		if(b.getNenner() != this.nenner) {
 			newNenner *= b.getNenner();
 		}
 		
 		int newZaehler = (nenner * b.getZaehler()) + (zaehler * b.getNenner());
-		
 		return new Bruch(newZaehler, newNenner);
-
 	}
 
 
