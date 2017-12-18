@@ -16,13 +16,14 @@ public class BruchTest {
 		Bruch h = new Bruch(1, 2);
 
 		b = b.kehrwert();
-		System.out.println(b.toString());
+		System.out.println(b);
 		k = k.multiplizieren(d);
-		System.out.println(k.toString());
-		d = d.addieren(s);
-		System.out.println(d.toString());
-		a = a.addieren(h);
-		System.out.println(a.toString());
+		System.out.println(k+"\n---\n");
+		
+		
+		System.out.println(d.addieren(s));
+		System.out.println(d.addieren2(s));
+
 	}
 
 }
